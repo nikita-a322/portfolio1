@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Портфолио игротехника | Бортниченко Никита</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: #eef2f5;
+            font-family: 'Segoe UI', Roboto, system-ui, -apple-system, sans-serif;
+            line-height: 1.5;
+            color: #1a2c3e;
+            padding: 2rem 1rem;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 2rem;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+            overflow: hidden;
+        }
+        header {
+            background: linear-gradient(135deg, #0b3b3f, #1b5e5c);
+            color: white;
+            padding: 2.5rem 2rem;
+            text-align: center;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.5px;
+        }
+        .subhead {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        nav {
+            background: #f0f6fa;
+            padding: 1rem 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.8rem;
+            border-bottom: 1px solid #d4dee5;
+            justify-content: center;
+        }
+        nav a {
+            text-decoration: none;
+            color: #1b5e5c;
+            font-weight: 600;
+            transition: 0.2s;
+        }
+        nav a:hover {
+            color: #0b3b3f;
+            border-bottom: 2px solid #1b5e5c;
+            padding-bottom: 2px;
+        }
+        .content {
+            padding: 2rem 2rem 3rem;
+        }
+        section {
+            margin-bottom: 3rem;
+            scroll-margin-top: 2rem;
+        }
+        h2 {
+            font-size: 1.9rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid #1b5e5c;
+            display: inline-block;
+        }
+        h3 {
+            font-size: 1.35rem;
+            margin: 1.5rem 0 0.8rem;
+            color: #1b5e5c;
+        }
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.8rem;
+            margin: 1.8rem 0;
+        }
+        .card {
+            background: #fafdff;
+            border-radius: 1.2rem;
+            padding: 1.4rem;
+            box-shadow: 0 6px 14px rgba(0,0,0,0.03);
+            border: 1px solid #e2ecf0;
+            transition: 0.2s;
+        }
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 20px rgba(0,0,0,0.05);
+        }
+        .badge {
+            background: #1b5e5c;
+            color: white;
+            padding: 0.2rem 0.9rem;
+            border-radius: 2rem;
+            font-size: 0.75rem;
+            display: inline-block;
+            margin-bottom: 0.9rem;
+            font-weight: 600;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.2rem 0;
+            font-size: 0.95rem;
+        }
+        th, td {
+            border: 1px solid #cde0e6;
+            padding: 0.75rem;
+            text-align: left;
+            vertical-align: top;
+        }
+        th {
+            background: #e2f0f0;
+            font-weight: 600;
+        }
+        .timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .timeline-item {
+            display: flex;
+            gap: 1rem;
+            background: #f9fbfd;
+            padding: 1rem;
+            border-radius: 1rem;
+            border-left: 4px solid #1b5e5c;
+        }
+        .timeline-month {
+            font-weight: bold;
+            min-width: 110px;
+            color: #1b5e5c;
+        }
+        .demo-btn {
+            background: linear-gradient(135deg, #1b5e5c, #0e4a48);
+            color: white;
+            padding: 0.8rem 1.6rem;
+            border-radius: 3rem;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: 0.2s;
+            margin-top: 0.5rem;
+            border: none;
+            cursor: pointer;
+        }
+        .demo-btn:hover {
+            background: #0e4a48;
+            transform: scale(1.02);
+            box-shadow: 0 4px 12px rgba(27,94,92,0.3);
+        }
+        .game-preview {
+            background: #f0f4f7;
+            border-radius: 1.5rem;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            text-align: center;
+            border: 1px dashed #87b9b3;
+        }
+        footer {
+            background: #eef3f7;
+            text-align: center;
+            padding: 1.5rem;
+            font-size: 0.85rem;
+            color: #2c6e6b;
+        }
+        @media (max-width: 700px) {
+            .content { padding: 1.5rem; }
+            h1 { font-size: 1.9rem; }
+            .timeline-item { flex-direction: column; gap: 0.3rem; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1>🎮 Бортниченко Никита</h1>
+        <div class="subhead">Игротехник · Специалист по геймификации · Интегратор ИИ в образование</div>
+    </header>
+    <nav>
+        <a href="#quest">🎯 Квест-игра</a>
+        <a href="#world">🌍 Игровой мир</a>
+        <a href="#roles">👥 Роли и уровни</a>
+        <a href="#tools">🤖 ИИ-инструменты</a>
+        <a href="#team">👾 Командные игры</a>
+        <a href="#roadmap">📅 Долгосрочный план</a>
+    </nav>
+    <div class="content">
+
+        <!-- ========== 1. РАЗРАБОТАННЫЙ КВЕСТ ========= -->
+        <section id="quest">
+            <h2>🔬 Квест «Тайна забытой лаборатории»</h2>
+            <p><strong>Жанр:</strong> текстовая квест-игра с разветвлённым сюжетом. <strong>Образовательная цель:</strong> развитие логического мышления, навыков принятия решений, понимания научного метода (выдвижение гипотез, анализ последствий).</p>
+            <div class="card-grid">
+                <div class="card">
+                    <div class="badge">🎲 Игровые механики</div>
+                    <ul>
+                        <li>3 стартовые ветки выбора</li>
+                        <li>12 сюжетных узлов</li>
+                        <li>6 различных концовок (от трагических до идеальной)</li>
+                        <li>Логическая загадка с подбором кода</li>
+                        <li>Химический вопрос (реакция натрия с водой)</li>
+                        <li>Влияние решений на финал</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <div class="badge">🧠 ИИ-соавторы</div>
+                    <ul>
+                        <li><strong>ChatGPT 4o</strong> – генерация структуры сюжета, ветвлений, концовок</li>
+                        <li><strong>YandexGPT</strong> – диалоги с ИИ-ассистентом HELIA, атмосферные описания</li>
+                        <li><strong>Claude 3 Haiku</strong> – эмоциональная редактура, усиление драматизма</li>
+                        <li><strong>GitHub Copilot</strong> – автодополнение кода, отладка переходов</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <div class="badge">🚀 Живое демо</div>
+                    <p>Игра опубликована и доступна онлайн. Перейдите по кнопке — откроется в новой вкладке.</p>
+                    <a href="https://nikita-a322.github.io/my-quest-game1/" target="_blank" class="demo-btn">🎮 Играть в «Тайну лаборатории» →</a>
+                    <p style="font-size:0.75rem; margin-top: 12px;">✅ Проверено: работает на ПК и смартфонах, без установки.</p>
+                </div>
+            </div>
+            <div class="game-preview">
+                📌 <strong>Методическая ценность:</strong> Квест объединяет нарратив и обучение. Игрок незаметно осваивает научную логику, учится просчитывать последствия выборов. ИИ позволил за 1.5 часа создать 12 сцен, которые вручную писались бы 8+ часов.
+            </div>
+        </section>
+
+        <!-- ========== 2. СЦЕНАРИЙ ИГРОВОГО МИРА ========= -->
+        <section id="world">
+            <h2>🌌 Сценарий мира: «Хроники резонанса»</h2>
+            <p><strong>Сеттинг:</strong> альтернативное будущее, 2078 год. После прорыва в квантовой физике учёные создали «резонансный кристалл», но эксперимент вышел из-под контроля. Лаборатория оказывается во временной петле, а игрок — стажёр, который должен стабилизировать реальность.</p>
+            <h3>🏛️ Ключевые локации</h3>
+            <ul>
+                <li><strong>Заброшенный НИИ «Прометей»</strong> – основная арена, разрушенные залы, мерцающие серверные.</li>
+                <li><strong>Подземный бункер</strong> – хранилище протоколов, доступ по биометрическому ключу.</li>
+                <li><strong>Цифровой разум HELIA</strong> – виртуальное пространство, где ИИ даёт подсказки.</li>
+                <li><strong>Временные аномалии</strong> – эпизодические зоны, где прошлое и будущее сталкиваются.</li>
+            </ul>
+            <h3>👤 Персонажи</h3>
+            <ul>
+                <li><strong>HELIA</strong> – искусственный интеллект с сухим, но обеспокоенным голосом. Помогает, но требует доказательств.</li>
+                <li><strong>Призрак профессора Аркадьева</strong> – мистический гид, который говорит загадками.</li>
+                <li><strong>Робот-уборщик «Спринт»</strong> – неожиданный союзник, знает тайные туннели.</li>
+            </ul>
+        </section>
+
+        <!-- ========== 3. СИСТЕМА РОЛЕЙ, УРОВНЕЙ, НАГРАД ========= -->
+        <section id="roles">
+            <h2>📊 Система прогрессии и мотивации</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <h3>🎭 Роли в команде</h3>
+                    <ul>
+                        <li><strong>Учёный</strong> – анализирует данные, решает головоломки.</li>
+                        <li><strong>Инженер</strong> – восстанавливает оборудование, взламывает замки.</li>
+                        <li><strong>Хакер</strong> – работает с терминалами, находит скрытые логи.</li>
+                        <li><strong>Медик</strong> – управляет ресурсом «стабильность», снимает негативные эффекты.</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>📈 Уровни мастерства (XP)</h3>
+                    <ul>
+                        <li>🔰 Стажёр (0 XP) – базовые действия</li>
+                        <li>⚙️ Лаборант (200 XP) – доступ к дополнительным подсказкам</li>
+                        <li>🔬 Исследователь (500 XP) – открывает секретные концовки</li>
+                        <li>🧠 Гениальный ум (1000 XP) – влияет на финальный эпизод</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>🏆 Награды и достижения</h3>
+                    <ul>
+                        <li>«Этичный хакер» – найден биометрический ключ</li>
+                        <li>«Феникс» – выжил после всех фатальных концовок</li>
+                        <li>«Архивариус» – собрал 3 секретных протокола</li>
+                        <li>Внутриигровая валюта «Кристаллы» → обмен на подсказки или кастомизацию аватара</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== 4. ИИ-ИНСТРУМЕНТЫ И ЦИФРОВЫЕ РЕШЕНИЯ ========= -->
+        <section id="tools">
+            <h2>🤖 Применение ИИ при разработке</h2>
+            <table>
+                <thead>
+                    <tr><th>Инструмент</th><th>Задача</th><th>Пример промта</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>ChatGPT 4o</td><td>Генерация сюжетной сетки, ветвлений, вариантов выбора</td><td>«Создай научно-фантастический квест с 3 стартовыми действиями, 12 сценами, логической загадкой и химическим вопросом»</td></tr>
+                    <tr><td>YandexGPT</td><td>Написание диалогов с HELIA, атмосферных описаний</td><td>«Диалог игрока с ИИ-ассистентом в срочном, научном тоне. Используй метафоры электричества»</td></tr>
+                    <tr><td>Claude 3 Haiku</td><td>Редактура, усиление драматизма, краткость</td><td>«Опиши лабораторию после аварии: коротко, тревожно, с запахами озона и горелой проводки»</td></tr>
+                    <tr><td>GitHub Copilot</td><td>Автодополнение JS-кода, отладка переходов между сценами</td><td>«Напиши функцию renderGame для отображения квеста»</td></tr>
+                </tbody>
+            </table>
+            <p><strong>Вывод:</strong> Нейросети стали полноценными соавторами — я ставил задачи, корректировал результаты, а затем интегрировал всё в готовый HTML-движок. Такой подход ускорил разработку в 5 раз и позволил создать нелинейный сценарий с 6 концовками.</p>
+        </section>
+
+        <!-- ========== 5. КОМАНДНЫЕ ИГРЫ И ЗАДАНИЯ ========= -->
+        <section id="team">
+            <h2>👥 Командные форматы и коллективные задания</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <h3>🛸 «Экспедиция на Марс»</h3>
+                    <p>Команда из 4–5 человек управляет марсианской колонией. Каждый игрок — специалист (биолог, инженер, связист, врач, пилот). Совместно решают этические дилеммы и ресурсные задачи. ИИ генерирует случайные события (песчаная буря, поломка генератора).</p>
+                </div>
+                <div class="card">
+                    <h3>🔐 «Взлом системы»</h3>
+                    <p>Соревновательный режим: две команды за ограниченное время взламывают виртуальные замки. Задания требуют коллективного обсуждения. Побеждает команда, набравшая больше «битов» — внутриигровой валюты.</p>
+                </div>
+                <div class="card">
+                    <h3>🧩 «Квест-эстафета»</h3>
+                    <p>Каждый участник команды проходит свой этап текстового квеста, а затем передаёт «ключ» следующему. Общий результат зависит от всех решений. Развивает взаимовыручку и ответственность.</p>
+                </div>
+            </div>
+            <h3>🎖️ Система поощрений в командах</h3>
+            <ul>
+                <li><strong>Командные бейджи:</strong> «Золотой резонанс» (лучшая стратегия), «Спасатели» (все выжили).</li>
+                <li><strong>Материальные бонусы:</strong> возможность выбрать тему следующего квеста, дополнительные кристаллы в личный профиль.</li>
+                <li><strong>Рейтинг курса:</strong> команды публикуются в «Зале славы» LMS.</li>
+            </ul>
+        </section>
+
+        <!-- ========== 6. ДОЛГОСРОЧНЫЙ ПЛАН ГЕЙМИФИКАЦИИ ========= -->
+        <section id="roadmap">
+            <h2>📅 План внедрения геймификации в образовательный процесс</h2>
+            <div class="timeline">
+                <div class="timeline-item"><div class="timeline-month">Месяц 1</div><div><strong>Диагностика и пилот</strong> – тестирование квеста на одной группе, сбор метрик (вовлечённость, время прохождения, ошибки). Корректировка сложности.</div></div>
+                <div class="timeline-item"><div class="timeline-month">Месяц 2–3</div><div><strong>Внедрение системы ролей и уровней</strong> – интеграция XP и достижений в LMS (Google Classroom / Moodle). Создание таблицы лидеров, автоматическая выдача наград.</div></div>
+                <div class="timeline-item"><div class="timeline-month">Месяц 4</div><div><strong>Запуск командных турниров</strong> – ежемесячный «Кибер-вызов» с использованием ИИ для генерации уникальных заданий под каждую команду.</div></div>
+                <div class="timeline-item"><div class="timeline-month">Месяц 5–6</div><div><strong>Автоматизация и масштабирование</strong> – Telegram-бот для уведомлений, автоматическое начисление кристаллов, API для генерации новых сценариев через ChatGPT.</div></div>
+                <div class="timeline-item"><div class="timeline-month">Постоянно</div><div><strong>Аналитика и итерации</strong> – сбор обратной связи, A/B тестирование механик, добавление сезонных событий (Хэллоуин-квест, новогодний лабиринт).</div></div>
+            </div>
+            <h3>📊 Ключевые метрики успеха</h3>
+            <ul>
+                <li>Рост вовлечённости (среднее время на платформе +30%)</li>
+                <li>Улучшение академических результатов (средний балл +15% по темам, затронутым в квестах)</li>
+                <li>Коэффициент удержания студентов (добровольное возвращение к игре после прохождения)</li>
+                <li>Положительная обратная связь в анонимных опросах (>80%)</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>📬 Контакты и резюме</h2>
+            <p><strong>Автор:</strong> Бортниченко Никита<br>
+            <strong>Роль:</strong> игротехник, геймификатор, разработчик образовательных ИИ-продуктов<br>
+            <strong>GitHub:</strong> <a href="https://github.com/nikita-a322" target="_blank">nikita-a322</a><br>
+            <strong>Демо-игра:</strong> <a href="https://nikita-a322.github.io/my-quest-game1/" target="_blank">https://nikita-a322.github.io/my-quest-game1/</a><br>
+            <strong>Email:</strong> (ваш email — вставьте при необходимости)</p>
+            <p>Данное портфолио демонстрирует системный подход к геймификации: от разовой игры до долгосрочной стратегии с использованием ИИ. Все разработки готовы к внедрению в школьное или корпоративное обучение.</p>
+        </section>
+    </div>
+    <footer>
+        © 2026 Бортниченко Никита — портфолио игротехника. Все игровые сценарии и ИИ-промты созданы в рамках курса по геймификации.
+    </footer>
+</div>
+</body>
+</html>
